@@ -17,31 +17,35 @@ namespace Taller4._1
             InitializeComponent();
         }
 
-        int num=1;
+        
 
         private void Btnregistrar_Click(object sender, EventArgs e)
         {
-            int tabla = int.Parse(txtnumeros.Text);
-           // string total;
-            
-
-            dataGridView1.Rows.Add(tabla, num+"");
-
-            num++;
-
-
-            for (int i = tabla; i <= 10; i++)
+            int numero, total, contador;
+            numero = int.Parse(txtnumeros.Text);
+            contador = 0;
+            int limite = 10;
+            for (int i = 1; i <= limite; i++)
             {
 
-                for (int j = tabla; j <= 10; j++)
-                {
+                contador += 1;
 
-                }
+                total = numero * contador;
+
+
+                dataGridView1.Rows.Add(numero, contador.ToString(), total.ToString());
+
 
             }
 
-           
+        }
 
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            dataGridView1.Rows.Clear();
+            txtnumeros.Text = "";
+            txtnumeros.Focus();
         }
     }
 }
+
